@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p class="dino">T-Rex is super powerfull!</p>
+    <p class="dino">Velociraptor is smart and fast!</p>
+
+    <p id="demo"></p>
+
+    <script>
+      var demo = document.getElementById('demo');
+      var dinos = document.getElementsByClassName('dino');
+      demo.innerHTML = 'The 1st dinosaur: ' + dinos[0].innerHTML;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form id="form1">
+      First name <input type="text" name="fname" value="Mikey"/></br>
+      Last name <input type="text" name="lname" value="Mouse"/>
+    </form>
+
+    <button onclick="getValues()">List form values</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function getValues () {
+        var demo = document.getElementById('demo');
+        var form = document.forms['form1'];
+        var result = '';
+
+        for (var i = 0; i < form.length; i++) {
+          result += form.elements[i].value + '</br>';
+        }
+
+        demo.innerHTML = result;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #trex {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+      }
+      #field {
+        height: 400px;
+        width: 400px;
+        position: relative;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button onclick="diagonal_run()">Diagonal run</button>
+    <button onclick="diagonal_back()">Diagonal back</button>
+    <button onclick="horizontal_run()">Forward run</button>
+
+    <div id="field">
+      <img id="trex" src="trex.png"/>
+    </div>
+
+    <script>
+      var trex = document.getElementById('trex');
+      var pos = 0;
+
+      function horizontal_run () {
+        var interval = setInterval(frame, 5);
+
+        function frame () {
+          if (pos === 350) {
+            clearInterval(interval);
+          } else {
+            pos++;
+            trex.style.left = pos + 'px';
+          }
+        };
+      };
+
+      function diagonal_run () {
+        var interval = setInterval(frame, 5);
+
+        function frame () {
+          if (pos === 350) {
+            clearInterval(interval);
+          } else {
+            pos++;
+            trex.style.top = pos + 'px';
+            trex.style.left = pos + 'px';
+          }
+        };
+      };
+
+      function diagonal_back () {
+        var interval = setInterval(frame, 5);
+
+        function frame () {
+          if (pos === 0) {
+            clearInterval(interval);
+          } else {
+            pos--;
+            trex.style.top = pos + 'px';
+            trex.style.left = pos + 'px';
+          }
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="main">
+      <p>Hello, T-Rex!</p>
+      <p>Hello, Velociraptor!</p>
+    </div>
+
+    <p id="demo"></p>
+
+    <script>
+      var demo = document.getElementById('demo');
+      var main = document.getElementById('main');
+      var children = main.getElementsByTagName('p');
+      demo.innerHTML = 'The 2nd child: ' + children[1].innerHTML;
+    </script>
+  </body>
+</html>
